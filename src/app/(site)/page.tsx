@@ -19,22 +19,14 @@ export default function HomePage() {
             </h1>
             <p className="mb-8 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
               科学的根拠に基づいた糖質制限の知識と、
-              実践で使える食事例・便利ツールを提供します。
+              実践で使える食事例を紹介します。
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/tools/meal-plan"
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-              >
-                食事プランを作る
-              </Link>
-              <Link
-                href="/blog"
-                className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-card px-8 text-base font-medium text-foreground shadow-sm transition-colors hover:bg-accent"
-              >
-                記事を読む
-              </Link>
-            </div>
+            <Link
+              href="/blog"
+              className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+            >
+              記事を読む
+            </Link>
           </div>
         </div>
       </section>
@@ -641,16 +633,16 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <div className="rounded-2xl bg-gradient-to-r from-primary/20 via-primary/10 to-accent/20 p-6 text-center sm:p-8 md:p-12">
             <h2 className="mb-4 text-xl font-bold text-foreground sm:text-2xl md:text-3xl">
-              あなた専用の食事プランを作成
+              もっと詳しく知りたい方へ
             </h2>
             <p className="mb-6 text-muted-foreground">
-              体重・目標に合わせた1週間分の食事例を提案します
+              ケトジェニックの実践的なノウハウを記事で解説しています
             </p>
             <Link
-              href="/tools/meal-plan"
+              href="/blog"
               className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
-              食事プランを作る
+              記事一覧を見る
             </Link>
           </div>
         </div>
