@@ -240,9 +240,12 @@ export default function HomePage() {
 
           <div className="mx-auto max-w-3xl space-y-4">
             {references.map((ref, index) => (
-              <div
+              <a
                 key={index}
-                className="rounded-lg border border-border/60 bg-card p-4"
+                href={ref.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg border border-border/60 bg-card p-4 transition-colors hover:border-primary/40 hover:bg-card/80"
               >
                 <div className="text-sm font-medium text-foreground">
                   {ref.title}
@@ -253,7 +256,7 @@ export default function HomePage() {
                 <div className="mt-1 text-xs text-muted-foreground">
                   {ref.journal}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
@@ -322,27 +325,31 @@ const benefits = [
 
 const references = [
   {
-    title: "A Low-Carbohydrate, Ketogenic Diet versus a Low-Fat Diet To Treat Obesity and Hyperlipidemia",
-    authors: "Yancy WS Jr, Olsen MK, Guyton JR, et al.",
-    year: "2004",
-    journal: "Annals of Internal Medicine",
+    title: "ケトジェニックダイエットの分子基盤",
+    authors: "日本生化学会",
+    year: "2022",
+    journal: "生化学 第94巻 第5号",
+    url: "https://seikagaku.jbsoc.or.jp/10.14952/SEIKAGAKU.2022.940730/data/index.html",
   },
   {
-    title: "The effect of a low-carbohydrate, ketogenic diet versus a low-glycemic index diet on glycemic control in type 2 diabetes mellitus",
-    authors: "Westman EC, Yancy WS Jr, Mavropoulos JC, et al.",
-    year: "2008",
-    journal: "Nutrition & Metabolism",
+    title: "ケトジェニックダイエットがヒトの健康に及ぼす影響について",
+    authors: "日本農芸化学会",
+    year: "2016",
+    journal: "化学と生物 Vol.54, No.9",
+    url: "https://katosei.jsbba.or.jp/view_html.php?aid=650",
   },
   {
-    title: "Long-term effects of a ketogenic diet in obese patients",
-    authors: "Dashti HM, Mathew TC, Hussein T, et al.",
-    year: "2004",
-    journal: "Experimental & Clinical Cardiology",
+    title: "ケトジェニックダイエットが生体に及ぼす影響",
+    authors: "山本 祐司",
+    year: "2016",
+    journal: "CiNii Research",
+    url: "https://cir.nii.ac.jp/crid/1390282679178159360",
   },
   {
-    title: "Beyond weight loss: a review of the therapeutic uses of very-low-carbohydrate (ketogenic) diets",
-    authors: "Paoli A, Rubini A, Volek JS, Grimaldi KA",
-    year: "2013",
-    journal: "European Journal of Clinical Nutrition",
+    title: "糖質制限食の科学的根拠",
+    authors: "日本糖尿病学会",
+    year: "2019",
+    journal: "糖尿病診療ガイドライン",
+    url: "https://www.jstage.jst.go.jp/article/kagakutoseibutsu/54/9/54_650/_pdf",
   },
 ];

@@ -206,6 +206,100 @@ export default function MealPlanPage() {
     setWeekPlan(null);
   };
 
+  const handlePrint = () => {
+    if (!targets || !weekPlan) return;
+
+    const printContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>ケト食事プラン - Ketolier</title>
+        <style>
+          body { font-family: sans-serif; padding: 20px; color: #333; }
+          h1 { text-align: center; margin-bottom: 5px; }
+          .subtitle { text-align: center; color: #666; margin-bottom: 20px; }
+          .section { border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+          .section h2 { margin: 0 0 10px 0; font-size: 16px; }
+          .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+          .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+          .day { border: 1px solid #eee; border-radius: 6px; padding: 10px; margin-bottom: 10px; }
+          .day h3 { margin: 0 0 8px 0; font-size: 14px; }
+          .meal { font-size: 12px; margin-bottom: 4px; }
+          .meal-label { color: #666; }
+          .kcal { color: #888; font-size: 11px; }
+          .stat-value { font-size: 24px; font-weight: bold; }
+          .stat-label { font-size: 11px; color: #666; }
+          .footer { margin-top: 20px; font-size: 11px; color: #888; border-top: 1px solid #eee; padding-top: 10px; }
+          @media print { body { padding: 0; } }
+        </style>
+      </head>
+      <body>
+        <h1>ケト食事プラン</h1>
+        <p class="subtitle">Ketolier</p>
+
+        <div class="section">
+          <h2>あなたの情報</h2>
+          <div class="grid">
+            <div>性別: ${input.gender === "male" ? "男性" : "女性"}</div>
+            <div>年齢: ${input.age}歳</div>
+            <div>身長: ${input.height}cm</div>
+            <div>現在体重: ${input.weight}kg</div>
+            <div>目標体重: ${input.goalWeight}kg</div>
+            <div>運動量: ${activityLabels[input.activityLevel]}</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>1日の目標</h2>
+          <div class="grid-4">
+            <div>
+              <div class="stat-value">${targets.calories}</div>
+              <div class="stat-label">kcal</div>
+            </div>
+            <div>
+              <div class="stat-value">${targets.protein}g</div>
+              <div class="stat-label">タンパク質</div>
+            </div>
+            <div>
+              <div class="stat-value">${targets.fat}g</div>
+              <div class="stat-label">脂質</div>
+            </div>
+            <div>
+              <div class="stat-value">${targets.carbs}g</div>
+              <div class="stat-label">糖質</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>1週間の食事プラン</h2>
+          ${weekPlan.map(day => `
+            <div class="day">
+              <h3>${day.day}</h3>
+              <div class="meal"><span class="meal-label">朝食:</span> ${day.meals.breakfast.name} <span class="kcal">(${day.meals.breakfast.calories}kcal)</span></div>
+              <div class="meal"><span class="meal-label">昼食:</span> ${day.meals.lunch.name} <span class="kcal">(${day.meals.lunch.calories}kcal)</span></div>
+              <div class="meal"><span class="meal-label">夕食:</span> ${day.meals.dinner.name} <span class="kcal">(${day.meals.dinner.calories}kcal)</span></div>
+              <div class="meal"><span class="meal-label">間食:</span> ${day.meals.snack.name} <span class="kcal">(${day.meals.snack.calories}kcal)</span></div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="footer">
+          <p>※ この食事プランは一般的な目安です。医療的なアドバイスではありません。</p>
+          <p>作成日: ${new Date().toLocaleDateString("ja-JP")}</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    const printWindow = window.open('', '_blank');
+    if (printWindow) {
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    }
+  };
+
   const isValid = input.age && input.height && input.weight && input.goalWeight;
 
   return (
@@ -476,12 +570,20 @@ export default function MealPlanPage() {
             </div>
           )}
 
-          <button
-            onClick={handleReset}
-            className="w-full rounded-lg border border-border bg-background py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
-          >
-            やり直す
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={handlePrint}
+              className="flex-1 rounded-lg bg-primary py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              PDFで保存
+            </button>
+            <button
+              onClick={handleReset}
+              className="flex-1 rounded-lg border border-border bg-background py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
+            >
+              やり直す
+            </button>
+          </div>
 
           <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
             <p className="text-xs leading-relaxed text-muted-foreground">
