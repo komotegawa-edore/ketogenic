@@ -17,10 +17,6 @@ export const metadata: Metadata = {
   description:
     "ケトジェニックダイエットの正しい知識と実践方法を解説。糖質制限の基礎から食事例、便利なツールまで。",
   metadataBase: new URL(process.env.SITE_URL || "http://localhost:3000"),
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
