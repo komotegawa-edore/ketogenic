@@ -53,12 +53,14 @@ export default function HomePage() {
           </p>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* 画像プレースホルダー */}
-            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-8">
-              <div className="text-center text-muted-foreground">
-                <div className="mb-2 text-4xl">🍚</div>
-                <p className="text-sm">画像: 糖質を食べる→血糖値上昇→インスリン分泌</p>
-              </div>
+            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-4">
+              <Image
+                src="/step1-carbs-insulin.png"
+                alt="糖質を食べる→血糖値上昇→インスリン分泌の流れ"
+                width={600}
+                height={300}
+                className="h-auto w-full"
+              />
             </div>
 
             <div className="space-y-4">
@@ -153,12 +155,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 画像プレースホルダー */}
-            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-8">
-              <div className="text-center text-muted-foreground">
-                <div className="mb-2 text-4xl">💧</div>
-                <p className="text-sm">画像: グリコーゲン＋水分が抜ける</p>
-              </div>
+            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-4">
+              <Image
+                src="/step2-glycogen-water.png"
+                alt="グリコーゲンと水分が抜けて体重が減る"
+                width={600}
+                height={300}
+                className="h-auto w-full"
+              />
             </div>
           </div>
 
@@ -192,21 +196,45 @@ export default function HomePage() {
 
           <div className="mb-12 grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
-              <div className="mb-3 text-3xl">🔥</div>
+              <div className="mx-auto mb-3 h-16 w-16">
+                <Image
+                  src="/icon-fat-breakdown.png"
+                  alt="脂肪を分解"
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <div className="mb-1 font-semibold text-foreground">脂肪を分解</div>
               <p className="text-sm text-muted-foreground">
                 体脂肪＋食事脂肪を分解して脂肪酸を作る
               </p>
             </div>
             <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
-              <div className="mb-3 text-3xl">⚡</div>
+              <div className="mx-auto mb-3 h-16 w-16">
+                <Image
+                  src="/icon-ketone-generation.png"
+                  alt="ケトン体を生成"
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <div className="mb-1 font-semibold text-foreground">ケトン体を生成</div>
               <p className="text-sm text-muted-foreground">
                 肝臓が脂肪酸からケトン体（β-ヒドロキシ酪酸など）を作る
               </p>
             </div>
             <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
-              <div className="mb-3 text-3xl">🧠</div>
+              <div className="mx-auto mb-3 h-16 w-16">
+                <Image
+                  src="/icon-energy-use.png"
+                  alt="エネルギーとして使う"
+                  width={64}
+                  height={64}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <div className="mb-1 font-semibold text-foreground">エネルギーとして使う</div>
               <p className="text-sm text-muted-foreground">
                 脳や筋肉がケトン体や脂肪酸をエネルギーとして利用
