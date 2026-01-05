@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "免責事項",
@@ -29,7 +30,10 @@ export default function DisclaimerPage() {
             2. 医療情報について
           </h2>
           <div className="rounded-lg bg-destructive/10 p-4 text-foreground">
-            <p className="font-medium">重要</p>
+            <p className="flex items-center gap-2 font-medium">
+              <AlertTriangle className="h-5 w-5 text-destructive" />
+              重要
+            </p>
             <p className="mt-2 text-sm">
               当サイトの情報は一般的な情報提供を目的としており、
               <strong>医療的なアドバイスではありません</strong>。

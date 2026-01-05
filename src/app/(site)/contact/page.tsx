@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Mail, AlertCircle, FileText, Bug } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -20,7 +21,8 @@ export default function ContactPage() {
 
         <div className="space-y-6">
           <div>
-            <h2 className="mb-2 font-semibold text-foreground">
+            <h2 className="mb-2 flex items-center gap-2 font-semibold text-foreground">
+              <Mail className="h-5 w-5 text-primary" />
               メールでのお問い合わせ
             </h2>
             <p className="text-muted-foreground">
@@ -40,21 +42,21 @@ export default function ContactPage() {
             <h2 className="mb-2 font-semibold text-foreground">
               お問い合わせの前に
             </h2>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="text-primary">・</span>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex gap-3">
+                <Bug className="h-4 w-4 shrink-0 text-primary mt-0.5" />
                 <span>
                   サイトの不具合やエラーについては、具体的な状況をお知らせください
                 </span>
               </li>
-              <li className="flex gap-2">
-                <span className="text-primary">・</span>
+              <li className="flex gap-3">
+                <AlertCircle className="h-4 w-4 shrink-0 text-primary mt-0.5" />
                 <span>
                   健康に関するご質問には医療専門家ではないためお答えできません
                 </span>
               </li>
-              <li className="flex gap-2">
-                <span className="text-primary">・</span>
+              <li className="flex gap-3">
+                <FileText className="h-4 w-4 shrink-0 text-primary mt-0.5" />
                 <span>
                   <Link href="/disclaimer" className="text-primary hover:underline">
                     免責事項
