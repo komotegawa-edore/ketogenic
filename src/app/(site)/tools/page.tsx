@@ -12,7 +12,7 @@ const tools = [
     title: "ネットカーボ計算機",
     description: "食品のネットカーボ（正味糖質量）を計算します",
     href: "/tools/net-carb-calculator",
-    status: "coming-soon" as const,
+    status: "available" as const,
   },
   {
     title: "PFCバランス計算機",
