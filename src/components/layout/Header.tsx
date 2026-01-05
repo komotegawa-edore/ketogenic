@@ -11,6 +11,7 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import { AuthButton } from "@/components/auth/AuthButton";
 
 const navigation = [
   { name: "ホーム", href: "/" },
@@ -36,21 +37,24 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-foreground ${
-                pathname === item.href
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6">
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-medium transition-colors hover:text-foreground ${
+                  pathname === item.href
+                    ? "text-foreground"
+                    : "text-muted-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+          <AuthButton />
+        </div>
 
         {/* Mobile Navigation */}
         <Sheet>
@@ -103,6 +107,9 @@ export function Header() {
                 </SheetClose>
               ))}
             </nav>
+            <div className="mt-4 border-t border-border pt-4 px-4">
+              <AuthButton />
+            </div>
           </SheetContent>
         </Sheet>
       </div>
