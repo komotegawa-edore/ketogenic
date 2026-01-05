@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -38,111 +39,393 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What is Keto Section */}
+      {/* Section 1: 普段の体 */}
       <section className="border-t border-border/60 bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <div className="mb-4 text-center text-sm font-medium text-primary">
+            STEP 1
+          </div>
           <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
-            ケトジェニックダイエットとは
+            普段の体：糖を燃やすモード
           </h2>
           <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
-            糖質を極端に制限し、脂質をエネルギー源とする食事法です。
+            まず、普通の食事をしているときの体の仕組みを理解しましょう。
           </p>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-xl border border-border/60 bg-card p-6">
-              <h3 className="mb-3 text-lg font-semibold text-foreground">
-                基本の仕組み
-              </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                通常、体は糖質（グルコース）をエネルギー源として使います。
-                しかし糖質を1日20〜50g以下に制限すると、体は脂肪を分解して
-                <strong className="text-foreground">ケトン体</strong>
-                を生成し、これをエネルギーとして使い始めます。
-                この状態を「ケトーシス」と呼びます。
-              </p>
-              <div className="rounded-lg bg-muted/50 p-4">
-                <div className="mb-2 text-sm font-medium text-foreground">
-                  標準的なPFCバランス
-                </div>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div className="flex justify-between">
-                    <span>脂質</span>
-                    <span className="font-medium text-foreground">70〜75%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>タンパク質</span>
-                    <span className="font-medium text-foreground">20〜25%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>糖質</span>
-                    <span className="font-medium text-foreground">5〜10%</span>
-                  </div>
-                </div>
+            {/* 画像プレースホルダー */}
+            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-8">
+              <div className="text-center text-muted-foreground">
+                <div className="mb-2 text-4xl">🍚</div>
+                <p className="text-sm">画像: 糖質を食べる→血糖値上昇→インスリン分泌</p>
               </div>
             </div>
 
-            <div className="rounded-xl border border-border/60 bg-card p-6">
-              <h3 className="mb-3 text-lg font-semibold text-foreground">
-                科学的な背景
-              </h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                ケトジェニックダイエットは1920年代にてんかん治療として開発されました。
-                近年は体重管理や代謝改善への効果が研究されています。
+            <div className="space-y-4">
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  1. 糖質を食べる
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  ごはん、パン、麺、甘い飲み物などを食べると、消化されて
+                  <strong className="text-foreground">血糖（グルコース）</strong>が増えます。
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  2. インスリンが出る
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  血糖を処理するために<strong className="text-foreground">インスリン</strong>
+                  というホルモンが分泌されます。
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  3. エネルギーとして使う or 貯蔵
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  細胞は血糖をエネルギーに変換。余った分は
+                  <strong className="text-foreground">グリコーゲン</strong>として貯蔵され、
+                  さらに余ると<strong className="text-foreground">脂肪</strong>になります。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 具体例 */}
+          <div className="mt-8 rounded-xl border border-primary/30 bg-primary/5 p-6">
+            <div className="mb-2 text-sm font-medium text-primary">具体例</div>
+            <p className="text-foreground">
+              <strong>昼に牛丼＋ジュース</strong>を食べると…
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              → 血糖が上がる → インスリンが多く出る → その日の活動エネルギーは主に糖でまかなう
+              → 余った分は脂肪として貯蔵されやすい
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: 糖質を減らすと */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <div className="mb-4 text-center text-sm font-medium text-primary">
+            STEP 2
+          </div>
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            糖質を減らすと何が起きる？
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            糖質を1日20〜50g以下に制限すると、体の中で変化が始まります。
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="space-y-4">
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  1. 血糖が上がりにくくなる
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  糖質の摂取が減るので、血糖値の急上昇が起きにくくなります。
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  2. インスリンが下がる
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  血糖が低いのでインスリンの分泌も減ります。
+                  これが脂肪燃焼モードへの切り替えスイッチになります。
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-border/60 bg-card p-4">
+                <div className="mb-2 font-semibold text-foreground">
+                  3. 貯蔵糖（グリコーゲン）を使い始める
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  体は肝臓や筋肉に貯めていたグリコーゲンを使い始めます。
+                </p>
+              </div>
+            </div>
+
+            {/* 画像プレースホルダー */}
+            <div className="flex items-center justify-center rounded-xl border border-border/60 bg-muted/30 p-8">
+              <div className="text-center text-muted-foreground">
+                <div className="mb-2 text-4xl">💧</div>
+                <p className="text-sm">画像: グリコーゲン＋水分が抜ける</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 重要ポイント */}
+          <div className="mt-8 rounded-xl border border-accent/30 bg-accent/10 p-6">
+            <div className="mb-2 text-sm font-medium text-accent-foreground">重要ポイント</div>
+            <p className="font-medium text-foreground">
+              グリコーゲンは水とセットで貯蔵されています
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              だから最初の数日で体重がストンと落ちることがありますが、
+              <strong className="text-foreground">脂肪が一気に減ったというより、水分も抜けている</strong>
+              ことが多いです。ケト開始2〜3日で-1.5kgは珍しくありません。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: ケトーシス */}
+      <section className="border-t border-border/60 bg-card/50">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <div className="mb-4 text-center text-sm font-medium text-primary">
+            STEP 3
+          </div>
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            ケトーシス：脂肪をエネルギーに変える
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            糖質制限が続くと、体は脂肪を分解してエネルギーを作り始めます。
+          </p>
+
+          <div className="mb-12 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
+              <div className="mb-3 text-3xl">🔥</div>
+              <div className="mb-1 font-semibold text-foreground">脂肪を分解</div>
+              <p className="text-sm text-muted-foreground">
+                体脂肪＋食事脂肪を分解して脂肪酸を作る
               </p>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <span>
-                    インスリン分泌が抑えられ、脂肪の蓄積が減少
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <span>
-                    血糖値の急激な変動がなくなり、空腹感が安定
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                  <span>
-                    脂質とタンパク質は消化に時間がかかり、満腹感が持続
-                  </span>
-                </li>
-              </ul>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
+              <div className="mb-3 text-3xl">⚡</div>
+              <div className="mb-1 font-semibold text-foreground">ケトン体を生成</div>
+              <p className="text-sm text-muted-foreground">
+                肝臓が脂肪酸からケトン体（β-ヒドロキシ酪酸など）を作る
+              </p>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-card p-6 text-center">
+              <div className="mb-3 text-3xl">🧠</div>
+              <div className="mb-1 font-semibold text-foreground">エネルギーとして使う</div>
+              <p className="text-sm text-muted-foreground">
+                脳や筋肉がケトン体や脂肪酸をエネルギーとして利用
+              </p>
+            </div>
+          </div>
+
+          {/* イメージ */}
+          <div className="rounded-xl border border-border/60 bg-card p-6">
+            <div className="mb-3 font-semibold text-foreground">イメージで理解する</div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-lg bg-muted/50 p-4">
+                <div className="mb-1 text-sm font-medium text-muted-foreground">通常モード</div>
+                <p className="text-foreground">
+                  ガソリン（糖）中心で走る車
+                </p>
+              </div>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <div className="mb-1 text-sm font-medium text-primary">ケトモード</div>
+                <p className="text-foreground">
+                  電気（脂肪）＋予備燃料（ケトン）で走れるハイブリッド車
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Section 4: なぜ痩せやすい？ */}
       <section className="border-t border-border/60">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
-            期待できる効果
+            なぜケトで痩せやすくなる？
           </h2>
           <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
-            正しく実践することで、以下の効果が報告されています。
+            痩せやすくなる理由は1つではなく、複数の要因が組み合わさっています。
           </p>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="rounded-xl border border-border/60 bg-card p-6 shadow-sm"
-              >
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {benefit.description}
-                </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 font-bold text-primary">
+                A
               </div>
-            ))}
+              <h3 className="mb-2 font-semibold text-foreground">
+                インスリンが下がりやすい
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                インスリンは「貯蔵モード」を強めるホルモン。
+                糖質が少ないと脂肪を貯める方向に引っ張られにくくなります。
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 font-bold text-primary">
+                B
+              </div>
+              <h3 className="mb-2 font-semibold text-foreground">
+                食欲が落ちやすい
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                ケトン体が出る＋血糖の乱高下が減る＋タンパク質が増える。
+                「間食したい」「甘いの欲しい」が減る人が多いです。
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 font-bold text-primary">
+                C
+              </div>
+              <h3 className="mb-2 font-semibold text-foreground">
+                食事がシンプルになる
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                自然と加工食品（パン・お菓子・ジュース）が減り、
+                タンパク質・脂質中心に。結果、摂取カロリーが下がることが多いです。
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Foods Section */}
+      {/* Section 5: 具体的な食事例 */}
+      <section className="border-t border-border/60 bg-card/50">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            同じ満足感でも体の反応が違う
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            具体的な食事例で比較してみましょう。
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* 普通の食事 */}
+            <div className="rounded-xl border border-border/60 bg-card overflow-hidden">
+              <div className="bg-muted/50 px-6 py-3">
+                <div className="font-semibold text-foreground">普通の昼食</div>
+              </div>
+              <div className="p-6">
+                <div className="mb-4 text-lg font-medium text-foreground">
+                  おにぎり2個 + 唐揚げ
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>→ 糖が多め</li>
+                  <li>→ インスリンが上がる</li>
+                  <li>→ 午後に眠くなる人も</li>
+                  <li>→ 2-3時間後にお腹が減りやすい</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* ケトの食事 */}
+            <div className="rounded-xl border border-primary/40 bg-card overflow-hidden">
+              <div className="bg-primary/10 px-6 py-3">
+                <div className="font-semibold text-primary">ケトの昼食</div>
+              </div>
+              <div className="p-6">
+                <div className="mb-4 text-lg font-medium text-foreground">
+                  ステーキ200g + サラダ + チーズ
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>→ 糖が少ない</li>
+                  <li>→ 脂肪酸＋ケトンが回る</li>
+                  <li>→ 血糖値が安定</li>
+                  <li>→ 腹持ちが長い人が多い</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 飲み物の例 */}
+          <div className="mt-8 rounded-xl border border-border/60 bg-card p-6">
+            <div className="mb-4 font-semibold text-foreground">飲み物も重要</div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="flex items-center gap-3 rounded-lg bg-destructive/10 p-3">
+                <span className="text-destructive">×</span>
+                <div>
+                  <div className="text-sm font-medium text-foreground">砂糖入りカフェラテ</div>
+                  <div className="text-xs text-muted-foreground">糖質が多く、ケトを邪魔しやすい</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-lg bg-accent/10 p-3">
+                <span className="text-primary">○</span>
+                <div>
+                  <div className="text-sm font-medium text-foreground">無糖コーヒー / お茶</div>
+                  <div className="text-xs text-muted-foreground">糖質ほぼゼロ、ケトを邪魔しない</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: ケトフルー */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            ケト開始直後に起きやすいこと
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            最初の数日〜1週間は「ケトフルー」と呼ばれる症状が出ることがあります。
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* 症状 */}
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="mb-4 font-semibold text-foreground">よくある症状</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground" />
+                  <span>だるい、疲れやすい</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground" />
+                  <span>頭がぼんやりする</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground" />
+                  <span>筋トレで力が出ない</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-muted-foreground" />
+                  <span>頭痛がする</span>
+                </li>
+              </ul>
+              <div className="mt-4 rounded-lg bg-muted/50 p-3 text-sm text-muted-foreground">
+                原因：糖が減った＋水分と一緒に塩分（電解質）も抜けやすい
+              </div>
+            </div>
+
+            {/* 対策 */}
+            <div className="rounded-xl border border-primary/40 bg-primary/5 p-6">
+              <h3 className="mb-4 font-semibold text-foreground">対策</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="text-primary">○</span>
+                  <span><strong>水分</strong>をしっかり摂る（1日2L以上）</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="text-primary">○</span>
+                  <span><strong>塩分</strong>を意識して摂る（味噌汁、塩など）</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="text-primary">○</span>
+                  <span><strong>カリウム</strong>（アボカド、ほうれん草）</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm text-foreground">
+                  <span className="text-primary">○</span>
+                  <span><strong>マグネシウム</strong>（ナッツ、海藻）</span>
+                </li>
+              </ul>
+              <div className="mt-4 rounded-lg bg-card p-3 text-sm text-muted-foreground">
+                通常1〜2週間で体が慣れて楽になります
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7: 食べていいもの・避けるもの */}
       <section className="border-t border-border/60 bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
@@ -225,17 +508,75 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
+
+          {/* 注意点 */}
+          <div className="mt-8 rounded-xl border border-accent/30 bg-accent/10 p-6">
+            <div className="mb-2 font-semibold text-foreground">糖質が紛れやすい罠</div>
+            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+              <div className="text-sm text-muted-foreground">
+                <strong className="text-foreground">調味料：</strong>ケチャップ、ソース、みりん
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <strong className="text-foreground">加工肉：</strong>ウインナー、ハム（つなぎに注意）
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <strong className="text-foreground">ナッツ：</strong>食べすぎると糖質も増える
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <strong className="text-foreground">野菜：</strong>玉ねぎ、ネギは糖質高め
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: PFCバランス */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            ケトジェニックのPFCバランス
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            一般的な目安です。個人差があるので体調を見ながら調整してください。
+          </p>
+
+          <div className="mx-auto max-w-2xl">
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <div className="mb-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-3xl font-bold text-primary">70-75%</div>
+                  <div className="text-sm text-muted-foreground">脂質</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-foreground">20-25%</div>
+                  <div className="text-sm text-muted-foreground">タンパク質</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-foreground">5-10%</div>
+                  <div className="text-sm text-muted-foreground">糖質</div>
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-muted/50 p-4">
+                <div className="mb-2 text-sm font-medium text-foreground">1日の糖質目安</div>
+                <p className="text-sm text-muted-foreground">
+                  <strong className="text-foreground">20〜50g以下</strong>が標準的な目安。
+                  厳格なケトは20g以下、ゆるめなら50g程度。
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* References Section */}
-      <section className="border-t border-border/60">
+      <section className="border-t border-border/60 bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
             参考文献
           </h2>
           <p className="mx-auto mb-8 max-w-3xl text-center text-muted-foreground">
-            ケトジェニックダイエットに関する主要な研究論文
+            ケトジェニックダイエットに関する日本語の研究論文
           </p>
 
           <div className="mx-auto max-w-3xl space-y-4">
@@ -268,7 +609,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-border/60 bg-card/50">
+      <section className="border-t border-border/60">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <div className="rounded-2xl bg-gradient-to-r from-primary/20 via-primary/10 to-accent/20 p-6 text-center sm:p-8 md:p-12">
             <h2 className="mb-4 text-xl font-bold text-foreground sm:text-2xl md:text-3xl">
@@ -289,39 +630,6 @@ export default function HomePage() {
     </div>
   );
 }
-
-const benefits = [
-  {
-    title: "体脂肪の効率的な燃焼",
-    description:
-      "糖質を制限することで体がケトン体をエネルギー源として使い始め、脂肪燃焼が促進されます。",
-  },
-  {
-    title: "安定したエネルギー",
-    description:
-      "血糖値の急激な変動がなくなり、1日を通して安定したエネルギーレベルを維持できます。",
-  },
-  {
-    title: "食欲のコントロール",
-    description:
-      "脂質とタンパク質中心の食事は満腹感が持続し、自然と食べ過ぎを防ぐことができます。",
-  },
-  {
-    title: "集中力の向上",
-    description:
-      "ケトン体は脳のエネルギー源としても使われ、血糖値が安定することで集中力が維持されやすくなります。",
-  },
-  {
-    title: "むくみの軽減",
-    description:
-      "糖質制限により体内の水分貯留が減少し、むくみが軽減されることがあります。",
-  },
-  {
-    title: "中性脂肪の改善",
-    description:
-      "複数の研究で、ケトジェニックダイエットが中性脂肪値の改善に寄与する可能性が示されています。",
-  },
-];
 
 const references = [
   {
