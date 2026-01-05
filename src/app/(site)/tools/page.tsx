@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    title: "ネットカーボ計算機",
-    description: "食品のネットカーボ（正味糖質量）を計算します",
-    href: "/tools/net-carb-calculator",
+    title: "ケト食事プラン",
+    description: "あなたに合った1週間分の食事例を提案します",
+    href: "/tools/meal-plan",
     status: "available" as const,
   },
   {

@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20 md:py-32">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20 md:py-28">
           <div className="flex flex-col items-center text-center">
             <span className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground/80">
               糖質制限で理想の体へ
@@ -22,42 +22,119 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/blog"
+                href="/tools/meal-plan"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
               >
-                記事を読む
+                食事プランを作る
               </Link>
               <Link
-                href="/tools"
+                href="/blog"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-card px-8 text-base font-medium text-foreground shadow-sm transition-colors hover:bg-accent"
               >
-                ツールを使う
+                記事を読む
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* What is Keto Section */}
       <section className="border-t border-border/60 bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
-          <h2 className="mb-8 text-center text-2xl font-bold text-foreground sm:mb-12 md:text-3xl">
-            ケトジェニックで得られること
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            ケトジェニックダイエットとは
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-border/60 bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  {feature.icon}
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            糖質を極端に制限し、脂質をエネルギー源とする食事法です。
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="mb-3 text-lg font-semibold text-foreground">
+                基本の仕組み
+              </h3>
+              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                通常、体は糖質（グルコース）をエネルギー源として使います。
+                しかし糖質を1日20〜50g以下に制限すると、体は脂肪を分解して
+                <strong className="text-foreground">ケトン体</strong>
+                を生成し、これをエネルギーとして使い始めます。
+                この状態を「ケトーシス」と呼びます。
+              </p>
+              <div className="rounded-lg bg-muted/50 p-4">
+                <div className="mb-2 text-sm font-medium text-foreground">
+                  標準的なPFCバランス
                 </div>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex justify-between">
+                    <span>脂質</span>
+                    <span className="font-medium text-foreground">70〜75%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>タンパク質</span>
+                    <span className="font-medium text-foreground">20〜25%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>糖質</span>
+                    <span className="font-medium text-foreground">5〜10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="mb-3 text-lg font-semibold text-foreground">
+                科学的な背景
+              </h3>
+              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                ケトジェニックダイエットは1920年代にてんかん治療として開発されました。
+                近年は体重管理や代謝改善への効果が研究されています。
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  <span>
+                    インスリン分泌が抑えられ、脂肪の蓄積が減少
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  <span>
+                    血糖値の急激な変動がなくなり、空腹感が安定
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                  <span>
+                    脂質とタンパク質は消化に時間がかかり、満腹感が持続
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            期待できる効果
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            正しく実践することで、以下の効果が報告されています。
+          </p>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit.title}
+                className="rounded-xl border border-border/60 bg-card p-6 shadow-sm"
+              >
                 <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {feature.title}
+                  {benefit.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {feature.description}
+                  {benefit.description}
                 </p>
               </div>
             ))}
@@ -65,21 +142,143 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Foods Section */}
+      <section className="border-t border-border/60 bg-card/50">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            食べていいもの・避けるもの
+          </h2>
+          <p className="mx-auto mb-12 max-w-3xl text-center text-muted-foreground">
+            ケトジェニックでは食材選びが重要です。
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="mb-4 font-semibold text-foreground">
+                積極的に食べたいもの
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">肉類：</strong>牛肉、豚肉、鶏肉、ラム肉</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">魚介類：</strong>サーモン、サバ、マグロ、エビ</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">卵：</strong>全卵、調理法問わず</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">乳製品：</strong>チーズ、バター、生クリーム</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">油脂：</strong>オリーブオイル、MCTオイル、ココナッツオイル</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">野菜：</strong>葉物野菜、ブロッコリー、アボカド</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-primary">○</span>
+                  <span><strong className="text-foreground">ナッツ：</strong>アーモンド、くるみ、マカダミア</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-border/60 bg-card p-6">
+              <h3 className="mb-4 font-semibold text-foreground">
+                避けるべきもの
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">穀物：</strong>米、パン、パスタ、うどん</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">砂糖：</strong>砂糖、はちみつ、シロップ</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">果物：</strong>バナナ、りんご、ぶどう（少量なら可）</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">根菜：</strong>じゃがいも、にんじん、かぼちゃ</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">豆類：</strong>大豆以外の豆、レンズ豆</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">清涼飲料：</strong>ジュース、スポーツドリンク</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-destructive">×</span>
+                  <span><strong className="text-foreground">加工食品：</strong>菓子パン、スナック菓子</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* References Section */}
       <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+          <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+            参考文献
+          </h2>
+          <p className="mx-auto mb-8 max-w-3xl text-center text-muted-foreground">
+            ケトジェニックダイエットに関する主要な研究論文
+          </p>
+
+          <div className="mx-auto max-w-3xl space-y-4">
+            {references.map((ref, index) => (
+              <div
+                key={index}
+                className="rounded-lg border border-border/60 bg-card p-4"
+              >
+                <div className="text-sm font-medium text-foreground">
+                  {ref.title}
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {ref.authors} ({ref.year})
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {ref.journal}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs text-muted-foreground">
+            ※ これらの研究は参考情報です。個人の体質や健康状態により効果は異なります。
+            医療的な判断は必ず専門家にご相談ください。
+          </p>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="border-t border-border/60 bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
           <div className="rounded-2xl bg-gradient-to-r from-primary/20 via-primary/10 to-accent/20 p-6 text-center sm:p-8 md:p-12">
             <h2 className="mb-4 text-xl font-bold text-foreground sm:text-2xl md:text-3xl">
-              まずはネットカーボを計算してみよう
+              あなた専用の食事プランを作成
             </h2>
             <p className="mb-6 text-muted-foreground">
-              1日に摂取できる糖質量の目安を簡単に計算できます
+              体重・目標に合わせた1週間分の食事例を提案します
             </p>
             <Link
-              href="/tools/net-carb-calculator"
+              href="/tools/meal-plan"
               className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
             >
-              計算機を使う
+              食事プランを作る
             </Link>
           </div>
         </div>
@@ -88,65 +287,62 @@ export default function HomePage() {
   );
 }
 
-const features = [
+const benefits = [
   {
     title: "体脂肪の効率的な燃焼",
     description:
       "糖質を制限することで体がケトン体をエネルギー源として使い始め、脂肪燃焼が促進されます。",
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
   },
   {
     title: "安定したエネルギー",
     description:
       "血糖値の急激な変動がなくなり、1日を通して安定したエネルギーレベルを維持できます。",
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      </svg>
-    ),
   },
   {
     title: "食欲のコントロール",
     description:
       "脂質とタンパク質中心の食事は満腹感が持続し、自然と食べ過ぎを防ぐことができます。",
-    icon: (
-      <svg
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
+  },
+  {
+    title: "集中力の向上",
+    description:
+      "ケトン体は脳のエネルギー源としても使われ、血糖値が安定することで集中力が維持されやすくなります。",
+  },
+  {
+    title: "むくみの軽減",
+    description:
+      "糖質制限により体内の水分貯留が減少し、むくみが軽減されることがあります。",
+  },
+  {
+    title: "中性脂肪の改善",
+    description:
+      "複数の研究で、ケトジェニックダイエットが中性脂肪値の改善に寄与する可能性が示されています。",
+  },
+];
+
+const references = [
+  {
+    title: "A Low-Carbohydrate, Ketogenic Diet versus a Low-Fat Diet To Treat Obesity and Hyperlipidemia",
+    authors: "Yancy WS Jr, Olsen MK, Guyton JR, et al.",
+    year: "2004",
+    journal: "Annals of Internal Medicine",
+  },
+  {
+    title: "The effect of a low-carbohydrate, ketogenic diet versus a low-glycemic index diet on glycemic control in type 2 diabetes mellitus",
+    authors: "Westman EC, Yancy WS Jr, Mavropoulos JC, et al.",
+    year: "2008",
+    journal: "Nutrition & Metabolism",
+  },
+  {
+    title: "Long-term effects of a ketogenic diet in obese patients",
+    authors: "Dashti HM, Mathew TC, Hussein T, et al.",
+    year: "2004",
+    journal: "Experimental & Clinical Cardiology",
+  },
+  {
+    title: "Beyond weight loss: a review of the therapeutic uses of very-low-carbohydrate (ketogenic) diets",
+    authors: "Paoli A, Rubini A, Volek JS, Grimaldi KA",
+    year: "2013",
+    journal: "European Journal of Clinical Nutrition",
   },
 ];
