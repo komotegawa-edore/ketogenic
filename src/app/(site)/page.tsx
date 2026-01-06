@@ -481,77 +481,61 @@ export default function HomePage() {
             ケトジェニックでは食材選びが重要です。
           </p>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-border/60 bg-card p-6">
-              <h3 className="mb-4 font-semibold text-foreground">
-                積極的に食べたいもの
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">肉類：</strong>牛肉、豚肉、鶏肉、ラム肉</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">魚介類：</strong>サーモン、サバ、マグロ、エビ</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">卵：</strong>全卵、調理法問わず</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">乳製品：</strong>チーズ、バター、生クリーム</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">油脂：</strong>オリーブオイル、MCTオイル、ココナッツオイル</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">野菜：</strong>葉物野菜、ブロッコリー、アボカド</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">○</span>
-                  <span><strong className="text-foreground">ナッツ：</strong>アーモンド、くるみ、マカダミア</span>
-                </li>
-              </ul>
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* OK食材 */}
+            <div className="overflow-hidden rounded-2xl border-2 border-primary/40 bg-card shadow-lg">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/foods-ok.png"
+                  alt="ケトジェニックにおすすめの食材：サーモン、アボカド、卵、チーズ、ナッツ、オリーブオイル"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-primary px-3 py-1 text-sm font-medium text-primary-foreground">
+                    <span>○</span>
+                    <span>積極的に食べたい</span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="flex flex-wrap gap-2">
+                  {["肉類", "魚介類", "卵", "チーズ", "バター", "オリーブオイル", "葉物野菜", "アボカド", "ナッツ"].map((item) => (
+                    <span key={item} className="rounded-full bg-primary/10 px-3 py-1 text-sm text-foreground">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="rounded-xl border border-border/60 bg-card p-6">
-              <h3 className="mb-4 font-semibold text-foreground">
-                避けるべきもの
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">穀物：</strong>米、パン、パスタ、うどん</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">砂糖：</strong>砂糖、はちみつ、シロップ</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">果物：</strong>バナナ、りんご、ぶどう（少量なら可）</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">根菜：</strong>じゃがいも、にんじん、かぼちゃ</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">豆類：</strong>大豆以外の豆、レンズ豆</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">清涼飲料：</strong>ジュース、スポーツドリンク</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-destructive">×</span>
-                  <span><strong className="text-foreground">加工食品：</strong>菓子パン、スナック菓子</span>
-                </li>
-              </ul>
+            {/* NG食材 */}
+            <div className="overflow-hidden rounded-2xl border-2 border-destructive/40 bg-card shadow-lg">
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src="/foods-ng.png"
+                  alt="ケトジェニックで避けるべき食材：米、パン、パスタ、じゃがいも、バナナ、ジュース"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-destructive px-3 py-1 text-sm font-medium text-destructive-foreground">
+                    <span>×</span>
+                    <span>避けるべき</span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="flex flex-wrap gap-2">
+                  {["米・ご飯", "パン", "麺類", "じゃがいも", "砂糖", "果物", "ジュース", "お菓子"].map((item) => (
+                    <span key={item} className="rounded-full bg-destructive/10 px-3 py-1 text-sm text-foreground">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
