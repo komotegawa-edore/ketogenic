@@ -6,27 +6,77 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20 md:py-28">
-          <div className="flex flex-col items-center text-center">
-            <span className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground/80">
-              糖質制限で理想の体へ
-            </span>
-            <h1 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-              ケトジェニックを
-              <br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>
-              <span className="text-primary">もっと身近に</span>
-            </h1>
-            <p className="mb-8 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">
-              科学的根拠に基づいた糖質制限の知識と、
-              実践で使える食事例を紹介します。
-            </p>
-            <Link
-              href="/blog"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
-            >
-              記事を読む
-            </Link>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:py-16 md:py-20">
+          <div className="grid items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* 左側：食事画像 */}
+            <div className="hidden lg:block">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/hero-keto-meal.png"
+                  alt="ケトジェニック食事例：サーモン、アボカド、卵"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* 中央：テキスト */}
+            <div className="flex flex-col items-center text-center lg:col-span-1">
+              <span className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-primary-foreground/80">
+                糖質制限で理想の体へ
+              </span>
+              <h1 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                ケトジェニックを
+                <br />
+                <span className="text-primary">もっと身近に</span>
+              </h1>
+              <p className="mb-8 max-w-md text-base text-muted-foreground sm:text-lg">
+                科学的根拠に基づいた糖質制限の知識と、
+                実践で使える食事例を紹介します。
+              </p>
+              <Link
+                href="/blog"
+                className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
+              >
+                記事を読む
+              </Link>
+
+              {/* モバイル用：画像を下に表示 */}
+              <div className="mt-10 grid grid-cols-2 gap-4 lg:hidden">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md">
+                  <Image
+                    src="/hero-keto-meal.png"
+                    alt="ケトジェニック食事例"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-md">
+                  <Image
+                    src="/hero-waist.png"
+                    alt="ダイエット成功イメージ"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* 右側：ウエスト画像 */}
+            <div className="hidden lg:block">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/hero-waist.png"
+                  alt="ダイエット成功イメージ：引き締まったウエスト"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
