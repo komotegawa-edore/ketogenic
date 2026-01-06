@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] overflow-hidden sm:min-h-[700px]">
+      <section className="relative min-h-[600px] overflow-hidden sm:min-h-[700px] lg:min-h-[800px]">
         {/* 背景画像（スマホ:斜め分割、PC:斜め横分割） */}
         <div className="absolute inset-0">
           {/* 食事画像（上/左） */}
@@ -34,7 +34,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/90" />
 
         {/* コンテンツ */}
-        <div className="relative z-10 flex min-h-[600px] items-center justify-center px-4 sm:min-h-[700px]">
+        <div className="relative z-10 flex min-h-[600px] items-center justify-center px-4 sm:min-h-[700px] lg:min-h-[800px]">
           <div className="flex flex-col items-center text-center">
             <span className="mb-4 inline-block rounded-full bg-primary/30 px-4 py-1.5 text-sm font-medium text-foreground backdrop-blur-sm">
               糖質制限で理想の体へ
