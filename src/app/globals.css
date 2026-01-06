@@ -158,3 +158,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero diagonal split */
+.hero-clip-top {
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 60%);
+}
+.hero-clip-bottom {
+  clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%);
+}
+
+@media (min-width: 640px) {
+  .hero-clip-top {
+    clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+  }
+  .hero-clip-bottom {
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+  }
+}

@@ -6,9 +6,10 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative min-h-[600px] overflow-hidden sm:min-h-[700px]">
-        {/* 背景画像（スマホ:縦分割、PC:横分割） */}
-        <div className="absolute inset-0 flex flex-col sm:flex-row">
-          <div className="relative h-1/2 w-full sm:h-full sm:w-1/2">
+        {/* 背景画像（スマホ:斜め分割、PC:斜め横分割） */}
+        <div className="absolute inset-0">
+          {/* 食事画像（上/左） */}
+          <div className="hero-clip-top absolute inset-0">
             <Image
               src="/hero-keto-meal.png"
               alt="ケトジェニック食事例"
@@ -17,7 +18,8 @@ export default function HomePage() {
               priority
             />
           </div>
-          <div className="relative h-1/2 w-full sm:h-full sm:w-1/2">
+          {/* ウエスト画像（下/右） */}
+          <div className="hero-clip-bottom absolute inset-0">
             <Image
               src="/hero-waist.png"
               alt="ダイエット成功イメージ"
